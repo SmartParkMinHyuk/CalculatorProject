@@ -9,7 +9,7 @@ import java.util.Scanner;
  개요 : 코딩스파르타 Spring 과정 2주차 LEVEL 1 과제 ( LEVEL 1/3 )
  주의 : 클래스를 사용하지 않고, 실행시킨다.
 */
-public class Calculator {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
