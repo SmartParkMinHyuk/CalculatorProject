@@ -15,6 +15,8 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         String option = "";
+        Calculator calculator = new Calculator();
+
         do {
             System.out.print("첫 번째 숫자를 입력하세요 : ");
             int num1 = sc.nextInt();
@@ -35,12 +37,15 @@ public class App {
             sc.nextLine();
 
             try {
-                int result = Calculator.calculate(num1, operator, num2);
+                int result = calculator.calculate(num1, operator, num2);
                 System.out.println("결과: " + result);
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 continue; // 오류 발생 시, 현재 반복 건너뛰기
             }
+
+            // 결과 히스토리
+             calculator.resultHistory();
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
             option = sc.nextLine();
