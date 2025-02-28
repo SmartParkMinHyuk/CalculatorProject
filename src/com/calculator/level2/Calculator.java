@@ -4,17 +4,26 @@ package com.calculator.level2;
  제목 : 클래스를 사용해서 계산기 만들기
  날짜 : 2025/02/26
  작성자 : 박민혁
- 개요 : 계산기의 클래스파일이다. 해당 클래스에서 연산을 진행한다.
+ 개요 : 계산기의 클래스파일이다. 해당 클래스에서 연산을 진행과 연산히토리를 관리한다.
 */
-
 import java.util.ArrayList;
 
 public class Calculator {
-    /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    ArrayList<String> list = new ArrayList<>();
 
+    private ArrayList<String> history = new ArrayList<>();
+
+    // HistoryList Getter
+    public ArrayList<String> getHistory() {
+        return new ArrayList<>(history);
+    }
+
+    // HistoryList Setter
+    public void setHistory(ArrayList<String> newHistory) {
+        this.history = newHistory;
+    }
+
+    // 계산기능
     public int calculate(int num1, char operator, int num2) {
-
         int result = 0;
 
         switch (operator) {
@@ -37,13 +46,6 @@ public class Calculator {
             default:
                 throw new IllegalArgumentException("잘못된 연산 기호입니다. 처음부터 다시 계산하세요");
         }
-
-        list.add(num1 + operator + num2 + "=" + result);
         return result;
     }
-
-    public void resultHistory() {
-        System.out.println(list);
-    }
-
 }
