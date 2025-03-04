@@ -2,6 +2,7 @@ package com.calculator.level2;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -41,12 +42,10 @@ public class App {
 
                 int result = calculator.calculate(num1, operator, num2);
                 System.out.print("요청하신, 계산 ");
-                System.out.println(num1 + " " + operator + " " + num2 + " 는 " + result + " 입니다. ");
 
-                // setter를 활용해서 히스토리를 넣는다.
-                ArrayList<String> addHistory = calculator.getHistory();
-                addHistory.add(num1 + " " + operator + " " + num2 + " = " + result);
-                calculator.setHistory(addHistory); // 적용하기(반드시 해야 적용된다.
+                String notice = num1 + " " + operator + " " + num2 + " 는 " + result;
+                System.out.println(notice + " 입니다. ");
+                calculator.setHistory(notice); // 적용하기(반드시 해야 적용된다.
 
                 while( true ) {
                     System.out.print("옵션을 선택해주세요 [더 계산하시려면 : 아무키][종료 : exit][히스토리 보기 : history][마지막 히스토리제거 : remove] : ");
@@ -67,11 +66,10 @@ public class App {
 
                     if(option.equals("remove")) {
                         // setter을 활용
-                        ArrayList<String> currentHistory = calculator.getHistory();
+                        List<String> currentHistory = calculator.getHistory();
                         if (!currentHistory.isEmpty()) {
-                            System.out.println("----------마지막 히스토리가 제거 되었습니다.----------");
                             currentHistory.remove(currentHistory.size() - 1);
-                            calculator.setHistory(currentHistory); // 갱신이 반드시필요
+                            System.out.println("----------마지막 히스토리가 제거 되었습니다.----------");
                         } else {
                             System.out.println("---------제거 할 히스토리가 없습니다. 계산을 해주세요.----------");
                         }

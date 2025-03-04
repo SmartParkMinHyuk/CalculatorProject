@@ -7,19 +7,22 @@ package com.calculator.level2;
  개요 : 계산기의 클래스파일이다. 해당 클래스에서 연산을 진행과 연산히토리를 관리한다.
 */
 import java.util.ArrayList;
+import java.util.List;
 
 public class Calculator {
 
-    private ArrayList<String> history = new ArrayList<>();
+    private List<String> history = new ArrayList<>();
+
+    //getter
 
     // HistoryList Getter
-    public ArrayList<String> getHistory() {
-        return new ArrayList<>(history);
+    public List<String> getHistory() {
+        return this.history;
     }
 
     // HistoryList Setter
-    public void setHistory(ArrayList<String> newHistory) {
-        this.history = newHistory;
+    public void setHistory(String newHistory) {
+        this.history.add(newHistory);
     }
 
     // 계산기능
