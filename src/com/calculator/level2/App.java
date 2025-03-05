@@ -1,7 +1,5 @@
 package com.calculator.level2;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -68,7 +66,7 @@ public class App {
                         // setter을 활용
                         List<String> currentHistory = calculator.getHistory();
                         if (!currentHistory.isEmpty()) {
-                            currentHistory.remove(currentHistory.size() - 1);
+                            currentHistory.remove(currentHistory.remove(0));
                             System.out.println("----------마지막 히스토리가 제거 되었습니다.----------");
                         } else {
                             System.out.println("---------제거 할 히스토리가 없습니다. 계산을 해주세요.----------");

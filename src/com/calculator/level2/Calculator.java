@@ -13,8 +13,6 @@ public class Calculator {
 
     private List<String> history = new ArrayList<>();
 
-    //getter
-
     // HistoryList Getter
     public List<String> getHistory() {
         return this.history;
