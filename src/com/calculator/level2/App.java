@@ -63,11 +63,10 @@ public class App {
                     }
 
                     if(option.equals("remove")) {
-                        // setter을 활용
                         List<String> currentHistory = calculator.getHistory();
                         if (!currentHistory.isEmpty()) {
                             currentHistory.remove(currentHistory.remove(0));
-                            System.out.println("----------마지막 히스토리가 제거 되었습니다.----------");
+                            System.out.println("---------가장 먼저 저장된 데이터 히스토리가 제거 되었습니다.----------");
                         } else {
                             System.out.println("---------제거 할 히스토리가 없습니다. 계산을 해주세요.----------");
                         }
